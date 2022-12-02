@@ -27,7 +27,7 @@ const App = () => {
         <AddTask addTaskFn={addTaskHandler} />
 
         {data.map((task) => (
-          <Task key={task.title} task={task} />
+          <Task key={task.title} task={task} deleteFn={deleteTaskHandler} />
         ))}
       </div>
     </div>

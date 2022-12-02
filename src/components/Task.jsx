@@ -1,8 +1,10 @@
-const Task = ({ task }) => {
+const Task = ({ task, deleteFn }) => {
   return (
     <div>
       <div>{task.title}</div>
-      <a href="#">Remove</a>
+      <a href="#" onClick={() => deleteFn(task.title)}>
+        Remove
+      </a>
     </div>
   );
 };

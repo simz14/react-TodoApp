@@ -1,0 +1,9 @@
+body {
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+}
+#root {
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}

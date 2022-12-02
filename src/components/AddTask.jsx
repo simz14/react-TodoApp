@@ -1,11 +1,11 @@
 import { useState } from "react";
 
-const AddTask = () => {
+const AddTask = ({ addTaskFn }) => {
   const [value, setValue] = useState("");
   return (
     <div>
       <input onChange={(e) => setValue(e.target.value)} type="text" />
-      <button onClick={() => console.log(value)}>Add</button>
+      <button onClick={() => addTaskFn(value)}>Add</button>
     </div>
   );
 };

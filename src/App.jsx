@@ -11,12 +11,15 @@ const App = () => {
     { title: "Task 5", done: false },
   ]);
 
+  const addTaskHandler = (value) => {
+    setData([{ title: value, done: false }, ...data]);
+  };
+
   return (
     <div>
       <h1>ToDo list</h1>
-
       <div>
-        {AddTask()}
+        <AddTask addTaskFn={addTaskHandler} />
         {data.map((task) => (
           <div key={task.title}>{task.title}</div>
         ))}

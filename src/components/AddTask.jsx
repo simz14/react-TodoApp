@@ -1,8 +1,11 @@
+import { useState } from "react";
+
 const AddTask = () => {
+  const [value, setValue] = useState("");
   return (
     <div>
-      <input type="text" />
-      <button>Add</button>
+      <input onChange={(e) => setValue(e.target.value)} type="text" />
+      <button onClick={() => console.log(value)}>Add</button>
     </div>
   );
 };

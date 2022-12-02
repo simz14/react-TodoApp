@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import AddTask from "./components/AddTask";
+import Task from "./components/Task";
 
 const App = () => {
   const [data, setData] = useState([
@@ -15,13 +16,18 @@ const App = () => {
     setData([{ title: value, done: false }, ...data]);
   };
 
+  const deleteTaskHandler = (title) => {
+    setData(data.filter((task) => task.title !== title));
+  };
+
   return (
     <div>
       <h1>ToDo list</h1>
       <div>
         <AddTask addTaskFn={addTaskHandler} />
+
         {data.map((task) => (
-          <div key={task.title}>{task.title}</div>
+          <Task key={task.title} task={task} />
         ))}
       </div>
     </div>

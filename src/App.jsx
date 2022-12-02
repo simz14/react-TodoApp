@@ -1,8 +1,15 @@
 import { useState } from "react";
+import styled from "styled-components";
 import "./App.css";
 import AddTask from "./components/AddTask";
 import SelectTasks from "./components/SelectTasks";
 import Task from "./components/Task";
+
+const AppWrapper = styled.div`
+  font-family: "Roboto", sans-serif;
+  display: grid;
+  justify-content: center;
+`;
 
 const App = () => {
   const [data, setData] = useState([
@@ -45,7 +52,7 @@ const App = () => {
   };
 
   return (
-    <div>
+    <AppWrapper>
       <h1>ToDo list📝</h1>
       <div>
         <AddTask addTaskFn={addTaskHandler} />
@@ -83,7 +90,7 @@ const App = () => {
           }
         })}
       </div>
-    </div>
+    </AppWrapper>
   );
 };
 
